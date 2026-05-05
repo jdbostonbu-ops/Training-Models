@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya Chen — ML Research Engineer</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ========================================
+         HERO SECTION: full-screen neural network animation with name and tagline
+         ======================================== -->
+    <section class="hero">
+        <canvas id="nn-hero"></canvas>
+        <div class="hero-content">
+            <p class="hero-name">maya chen · ml research engineer</p>
+            <h1 class="hero-title">Training models that reason</h1>
+            <p class="hero-subtitle">Building safer, more interpretable neural networks at the frontier of AI research.</p>
+        </div>
+        <p class="scroll-cue">↓ scroll</p>
+    </section>
+
+    <!-- ========================================
+         EDUCATION SECTION: explains what neural networks are for non-technical visitors
+         ======================================== -->
+    <section id="how-it-works">
+        <div class="container">
+            <p class="section-tag">01 / how it works</p>
+            <h2 class="section-title"><span class="typing">What is a neural network?</span></h2>
+
+            <p class="lead">Artificial neural networks (ANNs) are the decision-making framework behind large language models like GPT and Claude. They're loosely inspired by the human brain — millions of simple units called <strong>neurons</strong> arranged in layers, passing signals to each other.</p>
+
+            <p class="lead">An ANN has three sections: an <strong>input layer</strong> that receives raw data, one or more <strong>hidden layers</strong> that transform it, and an <strong>output layer</strong> that produces a prediction. The hidden layers are where the model learns patterns — adjusting billions of internal weights through training.</p>
+
+            <div class="ann-mini-wrapper">
+                <canvas id="ann-mini"></canvas>
+            </div>
+
+            <p class="lead">Training a network means showing it many examples and letting it adjust until its predictions match reality. Ask it: <em>what is the probability of sharks in the water at the Florida Gulf Coast in summer?</em> The model learns to produce a number like:</p>
+
+            <div class="formula-box">P(shark | location=Gulf, season=summer, time=day) = 0.34</div>
+
+            <p class="lead">That number doesn't come from a hardcoded rule — it emerges from the network being trained on thousands of historical sightings, water temperatures, beach reports, and seasonal patterns. The model finds the relationships humans would miss.</p>
+
+            <h3>Three families of neural networks</h3>
+            <p class="lead">Different architectures specialize in different kinds of data.</p>
+
+            <div class="nn-grid">
+                <div class="nn-type">
+                    <div class="nn-type-vis"><canvas id="vis-cnn"></canvas></div>
+                    <p class="nn-type-name">CNN</p>
+                    <p class="nn-type-title">Convolutional Neural Network</p>
+                    <p class="nn-type-desc">Built for images. Scans inputs with filters that detect edges, textures, then shapes — building understanding layer by layer.</p>
+                </div>
+                <div class="nn-type">
+                    <div class="nn-type-vis"><canvas id="vis-rnn"></canvas></div>
+                    <p class="nn-type-name">RNN</p>
+                    <p class="nn-type-title">Recurrent Neural Network</p>
+                    <p class="nn-type-desc">Built for sequences. Processes inputs one step at a time while carrying memory of what came before.</p>
+                </div>
+                <div class="nn-type">
+                    <div class="nn-type-vis"><canvas id="vis-tx"></canvas></div>
+                    <p class="nn-type-name">TRANSFORMER</p>
+                    <p class="nn-type-title">Attention-based</p>
+                    <p class="nn-type-desc">The architecture behind modern LLMs. Looks at every position simultaneously through attention.</p>
+                </div>
+            </div>
+
+            <h3>How does this help you?</h3>
+            <p class="lead">These architectures quietly run underneath much of modern life. CNNs power facial recognition on your phone, identify tumors in medical scans, and let autonomous vehicles read road signs. RNNs and transformers handle language and time — translation, transcription, the text you read in chat assistants.</p>
+
+            <div class="app-grid">
+                <div class="app-item"><span class="app-dot"></span><span>Facial recognition (CNN)</span></div>
+                <div class="app-item"><span class="app-dot"></span><span>Self-driving cars (CNN)</span></div>
+                <div class="app-item"><span class="app-dot"></span><span>Medical imaging (CNN)</span></div>
+                <div class="app-item"><span class="app-dot"></span><span>Speech recognition (RNN)</span></div>
+                <div class="app-item"><span class="app-dot"></span><span>Stock prediction (RNN)</span></div>
+                <div class="app-item"><span class="app-dot"></span><span>Language translation (Transformer)</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SELECTED WORK SECTION: four research project cards with mini animations
+         ======================================== -->
+    <section id="work">
+        <div class="container">
+            <p class="section-tag">02 / selected work</p>
+            <h2 class="section-title">Research and projects</h2>
+
+            <div class="work-grid">
+                <div class="proj-card">
+                    <div class="proj-vis"><canvas id="vis-gd"></canvas></div>
+                    <div class="proj-meta">
+                        <span class="proj-tag">optimization</span>
+                        <span class="proj-year">2024 · neurips</span>
+                    </div>
+                    <h3 class="proj-title">Loss landscape geometry in deep networks</h3>
+                    <p class="proj-desc">How gradient descent navigates non-convex surfaces, and why some initializations escape local minima while others get stuck.</p>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-vis"><canvas id="vis-att"></canvas></div>
+                    <div class="proj-meta">
+                        <span class="proj-tag">interpretability</span>
+                        <span class="proj-year">2024 · iclr</span>
+                    </div>
+                    <h3 class="proj-title">What attention heads actually attend to</h3>
+                    <p class="proj-desc">A study of induction heads in small transformers, mapping the circuits responsible for in-context learning.</p>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-vis"><canvas id="vis-cluster"></canvas></div>
+                    <div class="proj-meta">
+                        <span class="proj-tag">representations</span>
+                        <span class="proj-year">2023 · icml</span>
+                    </div>
+                    <h3 class="proj-title">Emergent clusters in latent space</h3>
+                    <p class="proj-desc">How concept clusters form during pretraining, and what they reveal about a model's internal taxonomy.</p>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-vis"><canvas id="vis-loss"></canvas></div>
+                    <div class="proj-meta">
+                        <span class="proj-tag">training dynamics</span>
+                        <span class="proj-year">2023 · open source</span>
+                    </div>
+                    <h3 class="proj-title">nano-trace: training observability library</h3>
+                    <p class="proj-desc">Lightweight tooling for visualizing loss curves, gradient norms, and activation statistics in real time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         WRITING SECTION: editorial list of essays and talks
+         ======================================== -->
+    <section id="writing">
+        <div class="container">
+            <p class="section-tag">03 / writing and talks</p>
+            <h2 class="section-title">Selected writing</h2>
+
+            <ul class="writing-list">
+                <li>
+                    <span class="writing-date">2025</span>
+                    <a href="https://arxiv.org/abs/2511.21514" class="writing-title">Mechanistic Interpretability for Transformer-based Time Series Classification</a>
+                </li>
+                <li>
+                    <span class="writing-date">2025</span>
+                    <a href="https://arxiv.org/abs/2407.02646" class="writing-title">A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models</a>
+                </li>
+                <li>
+                    <span class="writing-date">2024</span>
+                    <a href="https://arxiv.org/abs/2407.14494" class="writing-title">Semi-Synthetic Transformers for Evaluating Mechanistic Interpretability Techniques</a>
+                </li>
+                <li>
+                    <span class="writing-date">2024</span>
+                    <a href="https://arxiv.org/abs/2402.19442" class="writing-title">Training Dynamics of Multi-Head Softmax Attention for In-Context Learning</a>
+                </li>
+                <li>
+                    <span class="writing-date">2023</span>
+                    <a href="https://arxiv.org/abs/2304.14997" class="writing-title">Towards Automated Circuit Discovery for Mechanistic Interpretability</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CONTACT SECTION: how to reach Maya
+         ======================================== -->
+    <section id="contact">
+        <div class="container">
+            <p class="section-tag">04 / contact</p>
+            <h2 class="section-title">Let's work together</h2>
+            <p>Open to research collaborations, advising roles, and speaking engagements.</p>
+
+            <div class="contact-grid">
+                <a href="mailto:maya.chen@example.com?subject=AI%20Training%20and%20Collaboration&body=Hi%20Maya%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20was%20really%20impressed%20by%20your%20work%20on%20mechanistic%20interpretability%20and%20training%20dynamics.%20Your%20research%20on%20%5Bspecific%20paper%2Fproject%5D%20especially%20caught%20my%20attention.%0A%0AI%27d%20love%20to%20connect%20about%20a%20potential%20collaboration%20%5Bor%3A%20advising%20opportunity%2C%20research%20discussion%2C%20etc.%5D.%20A%20bit%20about%20me%3A%20%5Bbrief%20intro%20about%20yourself%20and%20your%20work%5D.%0A%0AWould%20you%20be%20open%20to%20a%2030-minute%20call%20in%20the%20coming%20weeks%3F%20I%27m%20flexible%20on%20timing%20and%20happy%20to%20work%20around%20your%20schedule.%0A%0ALooking%20forward%20to%20hearing%20from%20you%2C%0A%5BYour%20Name%5D" class="contact-link">Email</a>
+                <a href="https://x.com/" class="contact-link">X</a>
+                <a href="#" class="contact-link" onclick="showBooking(event)">Book A Call</a>
+                <a href="#" class="contact-link">Home</a>
+            </div>
+
+            <!-- ========================================
+                 BOOKING FLOW: calendar, time slots, project form, success
+                 Stage 2 = calendar (staggered assembly entrance)
+                 Stage 3 = project details form
+                 Stage 4 = success confirmation
+                 ======================================== -->
+            <div class="booking-flow gone" id="booking-stage-2">
+                <div class="cal-container" id="cal">
+                    <div class="cal-piece piece-1 cal-step-tag">step 1 of 2 · pick a date</div>
+
+                    <div class="cal-piece piece-2 cal-header">
+                        <span>May 2026</span>
+                        <span>‹  ›</span>
+                    </div>
+
+                    <div class="cal-piece piece-3 cal-day-row labels">
+                        <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div>
+                        <div>THU</div><div>FRI</div><div>SAT</div>
+                    </div>
+
+                    <div class="cal-piece piece-4 cal-day-row">
+                        <div class="cal-day dim">3</div>
+                        <div class="cal-day dim">4</div>
+                        <div class="cal-day" onclick="selectDay(this, 5)">5</div>
+                        <div class="cal-day" onclick="selectDay(this, 6)">6</div>
+                        <div class="cal-day" onclick="selectDay(this, 7)">7</div>
+                        <div class="cal-day" onclick="selectDay(this, 8)">8</div>
+                        <div class="cal-day dim">9</div>
+                    </div>
+
+                    <div class="cal-piece piece-5 cal-day-row">
+                        <div class="cal-day dim">10</div>
+                        <div class="cal-day dim">11</div>
+                        <div class="cal-day" onclick="selectDay(this, 12)">12</div>
+                        <div class="cal-day" onclick="selectDay(this, 13)">13</div>
+                        <div class="cal-day" onclick="selectDay(this, 14)">14</div>
+                        <div class="cal-day" onclick="selectDay(this, 15)">15</div>
+                        <div class="cal-day dim">16</div>
+                    </div>
+
+                    <div class="cal-piece piece-6 cal-day-row">
+                        <div class="cal-day dim">17</div>
+                        <div class="cal-day dim">18</div>
+                        <div class="cal-day" onclick="selectDay(this, 19)">19</div>
+                        <div class="cal-day" onclick="selectDay(this, 20)">20</div>
+                        <div class="cal-day" onclick="selectDay(this, 21)">21</div>
+                        <div class="cal-day" onclick="selectDay(this, 22)">22</div>
+                        <div class="cal-day dim">23</div>
+                    </div>
+
+                    <div class="cal-piece piece-7 cal-day-row">
+                        <div class="cal-day dim">24</div>
+                        <div class="cal-day dim">25</div>
+                        <div class="cal-day" onclick="selectDay(this, 26)">26</div>
+                        <div class="cal-day" onclick="selectDay(this, 27)">27</div>
+                        <div class="cal-day" onclick="selectDay(this, 28)">28</div>
+                        <div class="cal-day" onclick="selectDay(this, 29)">29</div>
+                        <div class="cal-day dim">30</div>
+                    </div>
+
+                    <div class="cal-piece piece-8">
+                        <div class="times-section" id="times-section">
+                            <p class="times-label">Available times on May <span id="day-out"></span>:</p>
+                            <div class="time-slots">
+                                <div class="time-slot" onclick="selectTime(this, '9:00 AM')">9:00 AM</div>
+                                <div class="time-slot" onclick="selectTime(this, '11:00 AM')">11:00 AM</div>
+                                <div class="time-slot" onclick="selectTime(this, '1:00 PM')">1:00 PM</div>
+                                <div class="time-slot" onclick="selectTime(this, '2:30 PM')">2:30 PM</div>
+                                <div class="time-slot" onclick="selectTime(this, '4:00 PM')">4:00 PM</div>
+                                <div class="time-slot" onclick="selectTime(this, '5:00 PM')">5:00 PM</div>
+                            </div>
+                        </div>
+
+                        <div class="cal-actions">
+                            <button class="book-btn secondary" onclick="goToBookingStage(1)">← Back</button>
+                            <button class="book-btn" id="continue-btn" onclick="goToBookingStage(3)" disabled>Continue →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-flow gone" id="booking-stage-3">
+                <div class="form-container">
+                    <p class="cal-step-tag">step 2 of 2 · project details</p>
+                    <h3 class="form-title">Tell me about your project</h3>
+
+                    <div class="confirm-bar">
+                        <span>📅 May <span id="confirm-day"></span>, 2026 · <span id="confirm-time"></span> PT</span>
+                        <button onclick="goToBookingStage(2)">Change</button>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Your name</label>
+                        <input type="text" placeholder="Jane Smith">
+                    </div>
+                    <div class="form-field">
+                        <label>Email</label>
+                        <input type="email" placeholder="jane@company.com">
+                    </div>
+                    <div class="form-field">
+                        <label>Project type</label>
+                        <div class="tag-row">
+                            <div class="tag" onclick="this.classList.toggle('selected')">Research collaboration</div>
+                            <div class="tag" onclick="this.classList.toggle('selected')">Advising</div>
+                            <div class="tag" onclick="this.classList.toggle('selected')">Speaking</div>
+                            <div class="tag" onclick="this.classList.toggle('selected')">Other</div>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label>What you'd like to discuss</label>
+                        <textarea placeholder="A brief description of your project and what you'd like to explore..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="book-btn secondary" onclick="goToBookingStage(2)">← Back</button>
+                        <button class="book-btn" onclick="goToBookingStage(4)">Send inquiry</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-flow gone" id="booking-stage-4">
+                <div class="success-container">
+                    <div class="success-checkmark">
+                        <svg class="checkmark-svg" viewBox="0 0 24 24">
+                            <path class="checkmark-path" d="M4 12 L10 18 L20 6"/>
+                        </svg>
+                    </div>
+                    <p class="cal-step-tag" style="text-align: center;">inquiry sent</p>
+                    <h3 class="form-title" style="text-align: center;">Talk to you soon!</h3>
+                    <p class="success-sub">Maya will reply within 2 business days to confirm your meeting on <strong>May <span id="success-day"></span></strong> at <strong><span id="success-time"></span></strong>.</p>
+                    <div style="text-align: center;">
+                        <button class="book-btn secondary" onclick="goToBookingStage(1)">Done</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Maya Chen</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
