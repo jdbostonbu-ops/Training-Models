@@ -1,4 +1,4 @@
-# Maya Chen — ML Research Engineer Portfolio 🧠
+# Maya Chen — ML Research Engineer AI Prompt 🧠
 A dark-aesthetic, animation-driven personal portfolio for a fictional ML research engineer, built after **CSS Labs: Phase I, Thinking with AI: HTML + CSS — Build a Styled Page**. This project began as a single `<h1>` and a community center page and grew into a multi-section portfolio featuring a live neural network hero animation, an educational explainer on artificial neural networks, four research project cards with custom Canvas micro-animations, a curated list of real arXiv publications, and a multi-stage booking flow with staggered calendar assembly — all delivered in pure Vanilla HTML, CSS, and JavaScript with zero dependencies.
 
 ## 👤 Author
