@@ -7,7 +7,7 @@ A dark-aesthetic, animation-driven personal portfolio for a fictional ML researc
 🚀 **[Launch — Maya Chen Portfolio](https://jdbostonbu-ops.github.io/Training-Models/)**
 
 <div align="center">
-  <img src="src/trainingmodels.gif" width="100%" alt="Maya Chen Portfolio Demo">
+  <img src="src/Trainingmodels.gif" width="100%" alt="Maya Chen Portfolio Demo">
 </div>
 
 ---
